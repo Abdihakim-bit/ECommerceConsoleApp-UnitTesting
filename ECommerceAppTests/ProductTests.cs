@@ -10,7 +10,8 @@ namespace ECommerceAppTests
 {
     public class ProductTests
     {
-        // Tests that the constructor correctly stores the lowest valid Product ID (7).
+        // This method verifies that the constructor correctly stores the lowest valid Product ID (7).
+        // This test ensures the system accepts the minimum valid product ID boundary. - Abdihakim Ali
         [Test]
         public void ProdID_ProdIDIsSeven_ShouldStoreProduct()
         {
@@ -25,7 +26,8 @@ namespace ECommerceAppTests
             //Assert
             Assert.That(actual, Is.EqualTo(expected));
         }
-        // Tests that the constructor correctly stores the highest valid Product ID (70000).
+        // This method verifies that the constructor correctly stores the highest valid Product ID (70000).
+        // This test ensures the system accepts the maximum valid product ID boundary. - Abdihakim Ali
         [Test]
         public void ProdID_ProdIDIsSeventyThousand_ShouldStoreProduct()
         {
@@ -40,7 +42,8 @@ namespace ECommerceAppTests
             //Assert
             Assert.That(actual, Is.EqualTo(expected));
         }
-        // Tests that the constructor correctly stores a Product ID within the valid range (between 7 and 70000).
+        // This method verifies that the constructor correctly stores a Product ID within the valid range (between 7 and 70000).
+        // This test ensures the system correctly handles IDs within the acceptable range. - Abdihakim Ali
         [Test]
         public void ProdID_ProdIDIsBetweenSevenandSeventyThousand_ShouldStoreProduct()
         {
@@ -55,7 +58,8 @@ namespace ECommerceAppTests
             //Assert
             Assert.That(actual, Is.EqualTo(expected));
         }
-        // Tests that the constructor correctly stores a Product Name with the minimum allowed length (1 character).
+        // This method verifies that the constructor correctly stores a Product Name with the minimum allowed length (1 character).
+        // This test ensures the system accepts product names with the shortest allowed length. - Abdihakim Ali
         [Test]
         public void ProdName_ProdNameIsOneCharacter_ShouldStoreProduct()
         {
@@ -70,7 +74,8 @@ namespace ECommerceAppTests
             //Assert
             Assert.That(actual, Is.EqualTo(expected));
         }
-        // Tests that the constructor correctly stores a Product Name with the maximum allowed length (50 characters).
+        // Verifies that the constructor correctly stores a Product Name with the maximum allowed length (50 characters).
+        // This test ensures the system handles the longest product names without issues. - Abdihakim Ali
         [Test]
         public void ProdName_ProdNameIsFiftyCharacters_ShouldStoreProduct()
         {
@@ -85,7 +90,8 @@ namespace ECommerceAppTests
             //Assert
             Assert.That(actual, Is.EqualTo(expected));
         }
-        // Tests that the constructor correctly stores a Product Name within the valid length range (between 1 and 50 characters).
+        // Verifies that the constructor correctly stores a Product Name within the valid length range (between 1 and 50 characters).
+        // This test ensures product names outside the valid length range are not accepted. - Abdihakim Ali
         [Test]
         public void ProdName_ProdNameBetweenOneAndFiftyCharacters_ShouldStoreProduct()
         {
@@ -101,6 +107,7 @@ namespace ECommerceAppTests
             Assert.That(actual, Is.EqualTo(expected));
         }
         // Ensures Item Price is correctly stored when set to the minimum valid value ($7).
+        // This test checks that the system can store and handle the lowest acceptable price. - Manav Lathiya 
         [Test]
         public void ItemPrice_ItemPriceIsSeven_ShouldStoreProduct()
         {
@@ -116,6 +123,7 @@ namespace ECommerceAppTests
             Assert.That(actual, Is.EqualTo(expected));
         }
         // Ensures Item Price is correctly stored when set to the maximum valid value ($7,000).
+        // This test checks that the system can handle the maximum acceptable price. - Manav Lathiya 
         [Test]
         public void ItemPrice_ItemPriceIsSevenThousand_ShouldStoreProduct()
         {
@@ -131,6 +139,7 @@ namespace ECommerceAppTests
             Assert.That(actual, Is.EqualTo(expected));
         }
         // Ensures Item Price within the valid range ($7 to $7,000) is correctly stored.
+        // This test ensures that prices falling between the valid range boundaries are correctly handled. - Manav Lathiya 
         [Test]
         public void ItemPrice_ItemPriceIsBetweenSevenAndSevenThousand_ShouldStoreProduct()
         {
@@ -146,6 +155,7 @@ namespace ECommerceAppTests
             Assert.That(actual, Is.EqualTo(expected));
         }
         // Ensures Stock Amount is correctly stored when set to the minimum valid value (7).
+        // This test ensures the system accepts the smallest valid stock quantity. - Manav Lathiya 
         [Test]
         public void StockAmount_StockAmountIsSeven_ShouldStoreProduct()
         {
@@ -161,6 +171,7 @@ namespace ECommerceAppTests
             Assert.That(actual, Is.EqualTo(expected));
         }
         // Ensures Stock Amount is correctly stored when set to the maximum valid value (700,000).
+        // This test ensures the system handles large stock quantities effectively. - Manav Lathiya 
         [Test]
         public void StockAmount_StockAmountIsSevenHundredThousand_ShouldStoreProduct()
         {
@@ -176,6 +187,7 @@ namespace ECommerceAppTests
             Assert.That(actual, Is.EqualTo(expected));
         }
         // Ensures Stock Amount within the valid range (7 to 700,000) is correctly stored.
+        // This test ensures stock amounts within the valid range are accurately handled - Manav Lathiya 
         [Test]
         public void StockAmount_StockAmountIsBetweenSevenandSeventyThousand_ShouldStoreProduct()
         {
@@ -191,7 +203,7 @@ namespace ECommerceAppTests
             Assert.That(actual, Is.EqualTo(expected));
         }
         // Ensures IncreaseStock does not modify stock when given an increment of 0.
-        // The stock amount should remain unchanged.
+        // The stock amount should remain unchanged. - Jaimin Jigneshkumar Solanki 
         [Test]
         public void IncreaseStock_WhenAddingZero_ShouldNotChangeStock()
         {
@@ -205,7 +217,7 @@ namespace ECommerceAppTests
             Assert.That(product.StockAmount, Is.EqualTo(20));
         }
         // Verifies that IncreaseStock can handle a large increment without errors.
-        // Ensures large stock additions are processed correctly.
+        // Ensures large stock additions are processed correctly. - Jaimin Jigneshkumar Solanki 
         [Test]
         public void IncreaseStock_WhenAddingLargeAmount_ShouldHandleLargePositiveNumbers()
         {
@@ -219,7 +231,7 @@ namespace ECommerceAppTests
             Assert.That(product.StockAmount, Is.EqualTo(700000));
         }
         // Confirms IncreaseStock properly handles a minimal increment of 1.
-        // Ensures small stock increases are correctly applied.
+        // Ensures small stock increases are correctly applied. - Jaimin Jigneshkumar Solanki 
         [Test]
         public void IncreaseStock_WhenAddingSmallAmount_ShouldHandleSmallIncrements()
         {
@@ -233,7 +245,7 @@ namespace ECommerceAppTests
             Assert.That(product.StockAmount, Is.EqualTo(11));
         }
         // Ensures DecreaseStock does not modify stock when given a decrement of 0.
-        // The stock amount should remain unchanged.
+        // The stock amount should remain unchanged. - Jaimin Jigneshkumar Solanki 
         [Test]
         public void DecreaseStock_WhenReducingByZero_ShouldNotChangeStock()
         {
@@ -247,7 +259,7 @@ namespace ECommerceAppTests
             Assert.That(product.StockAmount, Is.EqualTo(30));
         }
         // Verifies that DecreaseStock throws an exception when stock is insufficient.
-        // Ensures that attempting to remove more stock than available is properly handled.
+        // Ensures that attempting to remove more stock than available is properly handled. - Jaimin Jigneshkumar Solanki 
         [Test]
         public void DecreaseStock_WhenStockIsInsufficient_ShouldThrowException()
         {
@@ -262,7 +274,7 @@ namespace ECommerceAppTests
             Assert.That(actual, Is.EqualTo(expected));
         }
         // Ensures that DecreaseStock correctly sets stock to zero when the exact available amount is removed.
-        // Stock should be fully depleted when an exact match is deducted.
+        // Stock should be fully depleted when an exact match is deducted. - Jaimin Jigneshkumar Solanki 
         [Test]
         public void DecreaseStock_WhenAmountEqualsStock_ShouldReduceStockToZero()
         {
